@@ -1,5 +1,5 @@
 html {
-	font-family: Times, Times New Roman, serif;
+	font-family: Calibri;
  	background-color: #FFFFFF;
 }
 
@@ -7,14 +7,25 @@ body {
   width: 1000px;
   margin: 20px auto;
   background-color: #EEEEEE;
-  padding: 20px 20px 20px 20px;
+  padding: 30px 30px 30px 30px;
   box-shadow: 3px 3px 12px #777;
   /*border: 5px solid black;*/
 }
 
-img {
+.header h1{
+	margin: 5px auto;
+	padding: 5px auto;
+
+}
+
+.header h2{
+	margin: 5px auto;
+	padding: 5px auto;
+}
+
+.header img {
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 5px;
-  width: 185px;
+  width: 165px;
 }
