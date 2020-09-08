@@ -25,7 +25,19 @@ body {
 
 .header img {
   border: 1px solid #ddd;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 5px;
   width: 165px;
+}
+
+details > summary {
+  padding: 4px;
+  /*width: 200px;*/
+  border: none;
+  cursor: pointer;
+}
+
+details > p {
+  padding: 4px;
+  margin: 5px 5px 5px 15px;
 }
