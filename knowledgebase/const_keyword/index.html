@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>const keyword - Rashik Shrestha</title><meta name="Description" content=""><meta property="og:title" content="const keyword" />
+<meta property="og:description" content="Use Cases  We basically have 3 use cases of const keyword:  Restrict the change in value of a Variable Restrict the change of Pointer Restrict the class method to change the variables of that class    Restrict the change in value of a Variable const int x = 7; x = 10; // ERROR, cannot change the value of x const int&amp; p = 9; p = 10; // ERROR, cannot change the value of p const int* a = NULL; int val = 2; a = &amp;val; // We can change the Pointer  *a = 10; // ERROR, But we can’t change the contents of that Pointer Another way of writing:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rashik.info.np/knowledgebase/const_keyword/" />
+<meta property="article:published_time" content="2022-03-07T07:37:29+05:45" />
+<meta property="article:modified_time" content="2022-03-07T07:37:29+05:45" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="const keyword"/>
+<meta name="twitter:description" content="Use Cases  We basically have 3 use cases of const keyword:  Restrict the change in value of a Variable Restrict the change of Pointer Restrict the class method to change the variables of that class    Restrict the change in value of a Variable const int x = 7; x = 10; // ERROR, cannot change the value of x const int&amp; p = 9; p = 10; // ERROR, cannot change the value of p const int* a = NULL; int val = 2; a = &amp;val; // We can change the Pointer  *a = 10; // ERROR, But we can’t change the contents of that Pointer Another way of writing:"/>
+<meta name="application-name" content="Rashik Shrestha">
+<meta name="apple-mobile-web-app-title" content="Rashik Shrestha"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rashik.info.np/knowledgebase/const_keyword/" /><link rel="prev" href="http://rashik.info.np/knowledgebase/pointers_and_references/" /><link rel="next" href="http://rashik.info.np/knowledgebase/string/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "const keyword",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rashik.info.np\/knowledgebase\/const_keyword\/"
+        },"genre": "posts","keywords": "C\x2b\x2b","wordcount":  404 ,
+        "url": "http:\/\/rashik.info.np\/knowledgebase\/const_keyword\/","datePublished": "2022-03-07T07:37:29+05:45","dateModified": "2022-03-07T07:37:29+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Rashik Shrestha"},"author": {
+                "@type": "Person",
+                "name": "Rashik Shrestha"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/aboutme/aboutme"> About Me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/knowledgebase/"> Knowledge Base </a><a class="menu-item" href="/projects/"> Projects </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/aboutme/aboutme" title="">About Me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/knowledgebase/" title="">Knowledge Base</a><a class="menu-item" href="/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">const keyword</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rashik Shrestha</a></span>&nbsp;<span class="post-category">included in <a href="/categories/c++/"><i class="far fa-folder fa-fw"></i>C++</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-07">2022-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;404 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#use-cases">Use Cases</a>
+      <ul>
+        <li><a href="#restrict-the-change-in-value-of-a-variable">Restrict the change in value of a Variable</a></li>
+        <li><a href="#restrict-the-change-of-a-pointer">Restrict the change of a Pointer</a></li>
+        <li><a href="#restrict-the-class-method-to-change-the-variables-of-that--class">Restrict the class method to change the variables of that  class</a></li>
+      </ul>
+    </li>
+    <li><a href="#combining-all-three">Combining all three</a></li>
+    <li><a href="#todo">TODO</a></li>
+    <li><a href="#const-objects-can-call-const-methods-only">const objects can call const methods only</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="use-cases">Use Cases</h2>
+<ul>
+<li>We basically have 3 use cases of <code>const</code> keyword:
+<ol>
+<li>Restrict the change in value of a Variable</li>
+<li>Restrict the change of Pointer</li>
+<li>Restrict the class method to change the variables of that  class</li>
+</ol>
+</li>
+</ul>
+<h3 id="restrict-the-change-in-value-of-a-variable">Restrict the change in value of a Variable</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">const</span> <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// ERROR, cannot change the value of x
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// ERROR, cannot change the value of p
+</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">;</span>  <span class="c1">// We can change the Pointer
+</span><span class="c1"></span>
+<span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// ERROR, But we can’t change the contents of that Pointer 
+</span></code></pre></div><p>Another way of writing:</p>
+<ul>
+<li><code>const int x = 7</code> is identical to <code>int const x = 7</code></li>
+<li><code>const int&amp; p = 9</code> is identical to <code>int const &amp; p = 9</code></li>
+<li><code>const int* a = NULL</code> is identical to <code>int const * a = NULL</code></li>
+<li>Generalization: <code>const</code> can be written on either side of datatype name (e.g. int, float, class_name etc.) in order to restrict the change in value.</li>
+</ul>
+<h3 id="restrict-the-change-of-a-pointer">Restrict the change of a Pointer</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">;</span>  <span class="c1">// ERROR, We can&#39;t change the Pointer
+</span><span class="c1"></span>
+<span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// But we can change the contents of that Pointer 
+</span></code></pre></div><h3 id="restrict-the-class-method-to-change-the-variables-of-that--class">Restrict the class method to change the variables of that  class</h3>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="o">=</span><span class="mi">7</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="nf">modify_age</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// ERROR, const method cannot modify class variables
+</span><span class="c1"></span>    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div><h2 id="combining-all-three">Combining all three</h2>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">Dummy</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="kt">int</span><span class="o">*</span> <span class="k">const</span> <span class="nf">get_ptr</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">ptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">};</span>
+</code></pre></div><ul>
+<li><code>get_ptr</code> is a constant method which cannot change the variables of that class and returns a pointer which cannot be changed nor can be its content.</li>
+<li><code>const int* const get_ptr() const</code> is identical to <code>int const * const get_ptr() const</code></li>
+<li>Second one seems more uniform as <code>const</code> always appear on the right side of what it is applied on. That is:
+<ul>
+<li><code>int const</code> makes value const</li>
+<li><code>* cont</code> makes pointer const</li>
+<li><code>get_ptr() const</code> makes method const</li>
+</ul>
+</li>
+</ul>
+<h2 id="todo">TODO</h2>
+<p>void function_name(const int x)</p>
+<h2 id="const-objects-can-call-const-methods-only">const objects can call const methods only</h2>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">get_age</span><span class="p">()</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">age</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">set_age</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="n">Person</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">get_age</span><span class="p">();</span> <span class="c1">// Works fine
+</span><span class="c1"></span>    <span class="n">p</span><span class="p">.</span><span class="n">set_age</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// ERROR, const object p can only call const methods
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-03-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/knowledgebase/pointers_and_references/" class="prev" rel="prev" title="Pointers and References"><i class="fas fa-angle-left fa-fw"></i>Pointers and References</a>
+            <a href="/knowledgebase/string/" class="next" rel="next" title="Strings">Strings<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Rashik Shrestha</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

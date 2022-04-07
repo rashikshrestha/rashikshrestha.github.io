@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>How to compile C&#43;&#43; codes - Rashik Shrestha</title><meta name="Description" content=""><meta property="og:title" content="How to compile C&#43;&#43; codes" />
+<meta property="og:description" content="C&#43;&#43; code compilers TO-DO
+g&#43;&#43; vs gcc  g&#43;&#43; can compile any .c or .cpp files but they will be treated as C&#43;&#43; files only gcc can compile any .c or .cpp files but they will be treated as C and C&#43;&#43; respectively Using g&#43;&#43; to link the object files, files automatically links in the std C&#43;&#43; libraries. gcc does not do this.  Compilation Suppose we have simplest code in main." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rashik.info.np/knowledgebase/compile_cpp_codes/" />
+<meta property="article:published_time" content="2022-02-23T08:35:04+05:45" />
+<meta property="article:modified_time" content="2022-02-23T08:35:04+05:45" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to compile C&#43;&#43; codes"/>
+<meta name="twitter:description" content="C&#43;&#43; code compilers TO-DO
+g&#43;&#43; vs gcc  g&#43;&#43; can compile any .c or .cpp files but they will be treated as C&#43;&#43; files only gcc can compile any .c or .cpp files but they will be treated as C and C&#43;&#43; respectively Using g&#43;&#43; to link the object files, files automatically links in the std C&#43;&#43; libraries. gcc does not do this.  Compilation Suppose we have simplest code in main."/>
+<meta name="application-name" content="Rashik Shrestha">
+<meta name="apple-mobile-web-app-title" content="Rashik Shrestha"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rashik.info.np/knowledgebase/compile_cpp_codes/" /><link rel="prev" href="http://rashik.info.np/knowledgebase/ml_model_visualization_using_netron/" /><link rel="next" href="http://rashik.info.np/knowledgebase/epipolar_geometry/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to compile C++ codes",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rashik.info.np\/knowledgebase\/compile_cpp_codes\/"
+        },"genre": "posts","keywords": "C\x2b\x2b, compile","wordcount":  392 ,
+        "url": "http:\/\/rashik.info.np\/knowledgebase\/compile_cpp_codes\/","datePublished": "2022-02-23T08:35:04+05:45","dateModified": "2022-02-23T08:35:04+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Rashik Shrestha"},"author": {
+                "@type": "Person",
+                "name": "Rashik Shrestha"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/aboutme/aboutme"> About Me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/knowledgebase/"> Knowledge Base </a><a class="menu-item" href="/projects/"> Projects </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/aboutme/aboutme" title="">About Me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/knowledgebase/" title="">Knowledge Base</a><a class="menu-item" href="/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">How to compile C&#43;&#43; codes</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rashik Shrestha</a></span>&nbsp;<span class="post-category">included in <a href="/categories/c++/"><i class="far fa-folder fa-fw"></i>C++</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-23">2022-02-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;392 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#c-code-compilers">C++ code compilers</a></li>
+    <li><a href="#g-vs-gcc">g++ vs gcc</a></li>
+    <li><a href="#compilation">Compilation</a></li>
+    <li><a href="#not-a-single-step-process">Not a Single Step Process!</a>
+      <ul>
+        <li><a href="#barebone-source-file">Barebone Source file</a></li>
+        <li><a href="#step-1-preprocessing">Step 1: Preprocessing</a></li>
+        <li><a href="#step-2-compilation">Step 2: Compilation</a></li>
+        <li><a href="#step-3-assemble">Step 3: Assemble</a></li>
+        <li><a href="#step-4-linking">Step 4: Linking</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-multiple-files">Using Multiple files</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="c-code-compilers">C++ code compilers</h2>
+<p>TO-DO</p>
+<h2 id="g-vs-gcc">g++ vs gcc</h2>
+<ul>
+<li>g++ can compile any .c or .cpp files but they will be treated as C++ files only</li>
+<li>gcc can compile any .c or .cpp files but they will be treated as C and C++ respectively</li>
+<li>Using g++ to link the object files, files automatically links in the std C++ libraries. gcc does not do this.</li>
+</ul>
+<h2 id="compilation">Compilation</h2>
+<p>Suppose we have simplest code in <code>main.cpp</code> file, then</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp <span class="c1"># Produces the executable file (with default name i.e a.out)</span>
+./a.out  <span class="c1"># Runs a.out</span>
+
+g++ main.cpp -o main <span class="c1"># Specifies a filename to output rather than default name</span>
+./main  <span class="c1"># Runs main</span>
+</code></pre></div><h2 id="not-a-single-step-process">Not a Single Step Process!</h2>
+<ul>
+<li>Word <strong>Compilation</strong> is using wrongly.</li>
+<li><strong>Compilation</strong> is just Step 2 of the complete pipeline below.</li>
+</ul>
+<p><figure><a class="lightgallery" href="/how_to_compile_cpp_codes/compile_pipeline.png" title="Compilation Pipline" data-thumbnail="/how_to_compile_cpp_codes/compile_pipeline.png" data-sub-html="<h2>Compilation Pipeline</h2><p>Compilation Pipline</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/how_to_compile_cpp_codes/compile_pipeline.png"
+            data-srcset="/how_to_compile_cpp_codes/compile_pipeline.png, /how_to_compile_cpp_codes/compile_pipeline.png 1.5x, /how_to_compile_cpp_codes/compile_pipeline.png 2x"
+            data-sizes="auto"
+            alt="/how_to_compile_cpp_codes/compile_pipeline.png" />
+    </a><figcaption class="image-caption">Compilation Pipeline</figcaption>
+    </figure></p>
+<h3 id="barebone-source-file">Barebone Source file</h3>
+<div class="highlight"><pre class="chroma"><code class="language-Cpp" data-lang="Cpp"><span class="cp">#define LUCKY_NUMBER 7
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">LUCKY_NUMBER</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="step-1-preprocessing">Step 1: Preprocessing</h3>
+<p><code>g++ -E main.cpp</code></p>
+<p>Outputs:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Cpp" data-lang="Cpp"><span class="cp"># 1 &#34;main.cpp&#34;
+</span><span class="cp"># 1 &#34;&lt;built-in&gt;&#34;
+</span><span class="cp"># 1 &#34;&lt;command-line&gt;&#34;
+</span><span class="cp"># 1 &#34;/usr/include</span><span class="cpf">/stdc-predef.h&#34; 1 3 4</span><span class="cp">
+</span><span class="cp"># 1 &#34;&lt;command-line&gt;&#34; 2
+</span><span class="cp"># 1 &#34;main.cpp&#34;
+</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="step-2-compilation">Step 2: Compilation</h3>
+<p><code>g++ -S main.cpp</code></p>
+<p>Outputs: <code>main.s</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">	.file	&#34;main.cpp&#34;
+	.text
+	.globl	main
+	.type	main, <span class="ni">@function</span>
+main:
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movl	$7, -4(%rbp)
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	&#34;GCC: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0&#34;
+	.section	.note.GNU-stack,&#34;&#34;,@progbits
+	.section	.note.gnu.property,&#34;a&#34;
+	.align 8
+	.long	 1f - 0f
+	.long	 4f - 1f
+	.long	 5
+0:
+	.string	 &#34;GNU&#34;
+1:
+	.align 8
+	.long	 0xc0000002
+	.long	 3f - 2f
+2:
+	.long	 0x3
+3:
+	.align 8
+4:
+</code></pre></div><h3 id="step-3-assemble">Step 3: Assemble</h3>
+<p><code>g++ -c main.cpp</code></p>
+<p>Outputs: <code>main.o</code>
+It&rsquo;s a binary file, so we cannot read it.</p>
+<h3 id="step-4-linking">Step 4: Linking</h3>
+<p><code>g++ main.cpp</code></p>
+<p>Outputs: <code>a.out</code> which is executable.</p>
+<h2 id="using-multiple-files">Using Multiple files</h2>
+<p>Take following 3 files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// main.cpp
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&#34;add.h&#34;</span><span class="cp">
+</span><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// --------------------------------------
+</span><span class="c1">// add.h
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<span class="c1">// --------------------------------------
+</span><span class="c1">// add.cpp
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">g++ main.cpp add.cpp -o main <span class="c1"># Generates executable file &#39;main&#39; which outputs 5 when executed</span>
+
+<span class="c1"># OR do it in steps</span>
+g++ -c main.cpp add.cpp <span class="c1"># Genetates two object codes &#39;main.o&#39; and &#39;add.o&#39;</span>
+g++ main.o add.o -o main <span class="c1"># Generates executable file &#39;main&#39; which outputs 5 when executed</span>
+</code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-02-23</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>,&nbsp;<a href="/tags/compile/">compile</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/knowledgebase/ml_model_visualization_using_netron/" class="prev" rel="prev" title="ML model visualization using Netron"><i class="fas fa-angle-left fa-fw"></i>ML model visualization using Netron</a>
+            <a href="/knowledgebase/epipolar_geometry/" class="next" rel="next" title="Epipolar Geometry">Epipolar Geometry<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Rashik Shrestha</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

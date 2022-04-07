@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Rashik Shrestha</title>
+        <link>http://rashik.info.np/posts/</link>
+        <description>All Posts | Rashik Shrestha</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>rashikshrestha01@gmail.com (Rashik Shrestha)</managingEditor>
+            <webMaster>rashikshrestha01@gmail.com (Rashik Shrestha)</webMaster><lastBuildDate>Mon, 21 Feb 2022 16:56:13 &#43;0545</lastBuildDate><atom:link href="http://rashik.info.np/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>My First Post</title>
+    <link>http://rashik.info.np/posts/my-first-post/</link>
+    <pubDate>Mon, 21 Feb 2022 16:56:13 &#43;0545</pubDate>
+    <author>Author</author>
+    <guid>http://rashik.info.np/posts/my-first-post/</guid>
+    <description><![CDATA[This is my first post Hello this World !!]]></description>
+</item></channel>
+</rss>

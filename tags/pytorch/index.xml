@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>pytorch - Tag - Rashik Shrestha</title>
+        <link>http://rashik.info.np/tags/pytorch/</link>
+        <description>pytorch - Tag - Rashik Shrestha</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>rashikshrestha01@gmail.com (Rashik Shrestha)</managingEditor>
+            <webMaster>rashikshrestha01@gmail.com (Rashik Shrestha)</webMaster><lastBuildDate>Tue, 22 Feb 2022 13:29:41 &#43;0545</lastBuildDate><atom:link href="http://rashik.info.np/tags/pytorch/" rel="self" type="application/rss+xml" /><item>
+    <title>ML model visualization using Netron</title>
+    <link>http://rashik.info.np/knowledgebase/ml_model_visualization_using_netron/</link>
+    <pubDate>Tue, 22 Feb 2022 13:29:41 &#43;0545</pubDate>
+    <author>Author</author>
+    <guid>http://rashik.info.np/knowledgebase/ml_model_visualization_using_netron/</guid>
+    <description><![CDATA[1. Intro  Netron is really great tool to visualize the ML models. ONNX (Open Neural Network Exchange Format) is a format designed to represent any type of Machine Learning and Deep Learning models. Pytorch and Tensorflow can export the model in onnx format. This onnx file can then be read with Netron to visualize the model graphically.  2. Installation As simple as:
+pip install netron 3. Barebone code import torch import torch.]]></description>
+</item></channel>
+</rss>

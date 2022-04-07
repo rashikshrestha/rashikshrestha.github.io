@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>More on g&#43;&#43; - Rashik Shrestha</title><meta name="Description" content=""><meta property="og:title" content="More on g&#43;&#43;" />
+<meta property="og:description" content="Introduction g&#43;&#43; is a tool for preprocessing, compilation, assembly and linking of source code to generate an executable file or library.
+Installation As easy as:
+sudo apt update
+sudo apt install g&#43;&#43;
+General Syntax   General syntax to run g&#43;&#43; compiler is:
+g&#43;&#43; &lt;flags_with_params&gt; &lt;source_files&gt;
+  The above command takes a bunch of source files along with some flags and generates an executable file or a library file." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rashik.info.np/knowledgebase/all_about_g&#43;&#43;/" />
+<meta property="article:published_time" content="2022-04-05T17:53:22+05:45" />
+<meta property="article:modified_time" content="2022-04-05T17:53:22+05:45" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="More on g&#43;&#43;"/>
+<meta name="twitter:description" content="Introduction g&#43;&#43; is a tool for preprocessing, compilation, assembly and linking of source code to generate an executable file or library.
+Installation As easy as:
+sudo apt update
+sudo apt install g&#43;&#43;
+General Syntax   General syntax to run g&#43;&#43; compiler is:
+g&#43;&#43; &lt;flags_with_params&gt; &lt;source_files&gt;
+  The above command takes a bunch of source files along with some flags and generates an executable file or a library file."/>
+<meta name="application-name" content="Rashik Shrestha">
+<meta name="apple-mobile-web-app-title" content="Rashik Shrestha"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rashik.info.np/knowledgebase/all_about_g&#43;&#43;/" /><link rel="prev" href="http://rashik.info.np/knowledgebase/string/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "More on g++",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rashik.info.np\/knowledgebase\/all_about_g\x2b\x2b\/"
+        },"genre": "posts","keywords": "C\x2b\x2b","wordcount":  1080 ,
+        "url": "http:\/\/rashik.info.np\/knowledgebase\/all_about_g\x2b\x2b\/","datePublished": "2022-04-05T17:53:22+05:45","dateModified": "2022-04-05T17:53:22+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Rashik Shrestha"},"author": {
+                "@type": "Person",
+                "name": "Rashik Shrestha"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/aboutme/aboutme"> About Me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/knowledgebase/"> Knowledge Base </a><a class="menu-item" href="/projects/"> Projects </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/aboutme/aboutme" title="">About Me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/knowledgebase/" title="">Knowledge Base</a><a class="menu-item" href="/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">More on g&#43;&#43;</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rashik Shrestha</a></span>&nbsp;<span class="post-category">included in <a href="/categories/c++/"><i class="far fa-folder fa-fw"></i>C++</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-04-05">2022-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1080 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#general-syntax">General Syntax</a></li>
+    <li><a href="#some-important-flags">Some important flags</a></li>
+    <li><a href="#order-doesnt-matter-except-in-few-cases">Order doesn&rsquo;t matter (except in few cases)</a></li>
+    <li><a href="#creating-library">Creating Library</a>
+      <ul>
+        <li><a href="#creating-static-library">Creating Static Library</a></li>
+        <li><a href="#creating-dynamic-library">Creating Dynamic Library</a></li>
+      </ul>
+    </li>
+    <li><a href="#order-matters-here">Order Matters here..</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p><code>g++</code> is a tool for preprocessing, compilation, assembly and linking of source code to generate an executable file or library.</p>
+<h2 id="installation">Installation</h2>
+<p>As easy as:</p>
+<p><code>sudo apt update</code></p>
+<p><code>sudo apt install g++</code></p>
+<h2 id="general-syntax">General Syntax</h2>
+<ul>
+<li>
+<p>General syntax to run g++ compiler is:</p>
+<p><code>g++ &lt;flags_with_params&gt; &lt;source_files&gt;</code></p>
+</li>
+<li>
+<p>The above command takes a bunch of source files along with some flags and generates an executable file or a library file.</p>
+</li>
+<li>
+<p>Flags are very important because they can control the way compilation occurs.</p>
+</li>
+<li>
+<p>For example, if we have a single source file <code>main.cpp</code> and need to generate an executable file named <code>out</code>, the basic syntax for this task is <code>g++ main.cpp -o out</code></p>
+</li>
+<li>
+<p>Here, <code>main.cpp</code> is a source file and <code>-o</code> is a flag to specify the output filename. <code>out</code> is the name of the output executable file.</p>
+</li>
+<li>
+<p>Command can be as complex as <code>g++ -Wall -std=c++14 -I/some/path/to/include/dir  -O3 -c -fpermissive -fPIE -o objectfile.o sourcefile1.cpp sourcefile2.cpp sourcefile2.cpp -L/path/to/library/dir -lsomelibrary1 lsomelibrary2</code></p>
+</li>
+<li>
+<p>Here, <code>-W -std -O -c -f -o -L -l</code> are the flags along with their parameters and  <code>sourcefile1.cpp sourcefile2.cpp sourcefile2.cpp</code> are three source files.</p>
+</li>
+</ul>
+<h2 id="some-important-flags">Some important flags</h2>
+<ul>
+<li><code>-o</code> Specifies the output filename</li>
+<li><code>-I</code> Specifies the dir to look for header files</li>
+<li><code>-L</code> Specifies the dir to look for libraries</li>
+<li><code>-l</code> Specifies the name of a library to link to</li>
+<li><code>-g</code> To enable debugging</li>
+<li><code>-std</code> Specifies the C++ language standard</li>
+<li><code>-O</code> Specifies the Optimization level</li>
+<li><code>-W</code> Specifies the Warning option</li>
+</ul>
+<h2 id="order-doesnt-matter-except-in-few-cases">Order doesn&rsquo;t matter (except in few cases)</h2>
+<ul>
+<li>
+<p><code>flags</code> and <code>source files</code> can be <strong>written in any order</strong>. (with some exceptions while linking libraries, discussed below)</p>
+</li>
+<li>
+<p>Take a simple C++ code <code>main.cpp</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>  
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Hello, world!&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>Any of the following commands can be used to generate the executable file <code>main</code></p>
+<p><code>g++ main.cpp -o main</code></p>
+<p><code>g++ -o main main.cpp</code></p>
+<p><code>g++ main.cpp -omain</code></p>
+<p><code>g++ -omain main.cpp </code></p>
+</li>
+<li>
+<p>As you can see, it doesn&rsquo;t matter in what order you keep <code>-o</code> flag and source file <code>main.cpp</code></p>
+</li>
+<li>
+<p>Moreover, it doen&rsquo;t matter if you keep a space after <code>-o</code> flag or not.</p>
+</li>
+<li>
+<p>Now, lets add some more flags: <code>-Wall</code> to show all the warnings, <code>-g</code> to enable debugging, and <code>-std</code> to specify C++ standard.</p>
+</li>
+<li>
+<p>All the commands below produces identical output:</p>
+<p><code>g++ -Wall -g -std=c++14 main.cpp -o main</code></p>
+<p><code>g++ -Wall main.cpp -g -omain -std=c++14</code></p>
+<p><code>g++ main.cpp -Wall -omain -g -std=c++14</code></p>
+</li>
+<li>
+<p>Now, lets try this with more than one source file</p>
+</li>
+</ul>
+<a href="/more_on_g++/cpp_files.png">
+<img src="/more_on_g++/cpp_files.png" alt="drawing" width="700"/>
+</a>
+<ul>
+<li>
+<p>We can compile this with any of following commands:</p>
+<p><code>g++ main.cpp add.cpp subtract.cpp -o main</code> (Simplest way)</p>
+<p><code>g++ -g -std=c++14 -Wall main.cpp add.cpp subtract.cpp -o main</code> (With some flags)</p>
+<p><code>g++ -Wall add.cpp -std=c++14 -o main main.cpp -g subtract.cpp</code> (Jumble up everything and it still works)</p>
+</li>
+</ul>
+<h2 id="creating-library">Creating Library</h2>
+<ul>
+<li>Executable file is a standalone file, which can be executed i.e run as a program. Whereas a library is a collection of stuff that can be invoked from the executable files.</li>
+<li>All the examples above show how to create an executable file.</li>
+<li>There are two types of library:
+<ul>
+<li>Static Library</li>
+<li>Dynamic Library</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-static-library">Creating Static Library</h3>
+<ul>
+<li>Static library is nothing but a precompiled source file that can be linked to generate an executable file or other library.</li>
+</ul>
+<a href="/more_on_g++/static_lib.png">
+<img src="/more_on_g++/static_lib.png" width="700"/>
+</a>
+<ul>
+<li>
+<p>First flow chart shows how an executable is generated by processing all the source files via the whole pipeline.</p>
+</li>
+<li>
+<p>Second flow chart shows object files are generated in intermediate steps and are linked later to generate an executable file.</p>
+</li>
+<li>
+<p>These object files can be viewed as static libraries that are linked to main.o to produce an executable file.</p>
+</li>
+<li>
+<p>This can be done using following commands:</p>
+<p><code>g++ -c main.cpp add.cpp subtract.cpp</code> (Generate Object files)</p>
+<p><code>g++ main.o add.o subtract.o -o main</code> (Generate executable from object files)</p>
+</li>
+<li>
+<p>Moreover, we can mix up source files and object files while generating executable file:</p>
+<p><code>g++ -c add.cpp subtract.cpp</code></p>
+<p><code>g++ main.cpp add.o subtract.o -o main</code></p>
+</li>
+<li>
+<p>Here, add.o and subtract.o are the object files acting as library for main.cpp</p>
+</li>
+<li>
+<p>Now, lets try to bundle up these object files into a single file, which we can call <strong>Static Library</strong></p>
+<p><code>g++ -c add.cpp subtract.cpp </code> (first generate add.o and subtract.o)</p>
+<p><code>ar rc my_first_library add.o subtract.o</code> (Bundle/Archive the object files to a single file <strong>my_first_library</strong>)</p>
+<p><code>g++ main.cpp my_first_library -o main</code> (Now, use this library to produce the executable file)</p>
+</li>
+<li>
+<p>Thats it! You have sucessfully created and used your first Static Library.</p>
+</li>
+<li>
+<p><code>ar</code> is called <strong>archiver</strong>. A tool used to create, modify, and extract from archives.</p>
+</li>
+<li>
+<p>You can see the list of files in archive using: <code>ar -t my_first_library</code></p>
+</li>
+</ul>
+<p><strong>Still some work left &hellip;</strong></p>
+<ul>
+<li>
+<p>Well, now let&rsquo;s look into some naming conventions and standard ways of linking a static library.</p>
+</li>
+<li>
+<p>Generally, static library is named as: <code>lib&lt;library_name&gt;.a</code></p>
+</li>
+<li>
+<p>And is linked as:</p>
+<p><code>g++ &lt;source_files&gt; -o &lt;output_filename&gt; -L&lt;path/to/lib&gt; -l&lt;name_of_lib&gt;</code></p>
+</li>
+<li>
+<p>So, correct way of linking a static library in above example is:</p>
+<p><code>g++ -c add.cpp subtract.cpp </code> (first generate add.o and subtract.o)</p>
+<p><code>ar rc libmy_first_library.a add.o subtract.o</code> (Bundle/Archive the object files to a single file)</p>
+<p><code>g++ main.cpp -o main -L. -lmy_first_library</code> (Now, use this library to produce the executable file)</p>
+</li>
+</ul>
+<h3 id="creating-dynamic-library">Creating Dynamic Library</h3>
+<ul>
+<li>
+<p>Dynamic library are not linked with the executable file during compilation process. They are linked during execution. i.e. linked dynamically.</p>
+</li>
+<li>
+<p>Dynamic library is named as: <code>lib&lt;library_name&gt;.so</code></p>
+</li>
+<li>
+<p>Commands to create dynamic library for above example are:</p>
+<p><code>g++ -c add.cpp subtract.cpp</code> (First generate object files as before)</p>
+<p><code>g++ -shared add.o subtract.o -o libmy_first_shared_library.so</code> (generate a shared library form the object files)</p>
+<p><code>g++ main.cpp -o main -L. -lmy_first_shared_library</code> (Now create an executable by linking the dynamic library)</p>
+</li>
+<li>
+<p>Now, if you run <code>./main</code>, it will probably give an error.</p>
+</li>
+<li>
+<p>That&rsquo;s because the executable <code>main</code> needs to know where to search for library <code>libmy_first_shared_library.so</code>.</p>
+</li>
+<li>
+<p>We can add the search path to the environment variable <code>LD_LIBRARY_PATH</code> so that <code>main</code> finds it.</p>
+<p><code>export LD_LIBRARY_PATH=/path/to/dynamic_library</code></p>
+</li>
+<li>
+<p>Now, when you run <code>./main</code>, it should work perfectly.</p>
+</li>
+<li>
+<p>You can also see all the dynamic dependencies/libraries linked to <code>main</code> by using command <code>ldd main</code>. i.e. List Dynamic Dependencies of executable file <code>main</code></p>
+</li>
+</ul>
+<h2 id="order-matters-here">Order Matters here..</h2>
+<ul>
+<li>
+<p>While generating the executable <code>main</code> by linking static or dynamic library in above example, we have used:</p>
+<p><code>g++ main.cpp -o main -L. -lname_of_lib</code></p>
+</li>
+<li>
+<p>But as the flags are position independent, we may try to compile with:</p>
+<p><code>g++ -o main -L. -lname_of_lib main.cpp</code></p>
+</li>
+<li>
+<p>But this time, it shows error stating <code>undefined reference</code></p>
+</li>
+<li>
+<p>The source file <code>main.cpp</code> uses the functions <code>add</code> and <code>subtract</code>, which is found inside the linked library.</p>
+</li>
+<li>
+<p><code>g++</code> is designed in such a way that dependent stuff must be mentioned beforehand.</p>
+</li>
+<li>
+<p>As <code>main.cpp</code> is dependent on <code>-lname_of_lib</code> , <code>main.cpp</code> must be written before <code>-lname_of_lib</code></p>
+</li>
+<li>
+<p>Other flags can be kept anywhere.</p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-04-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/knowledgebase/string/" class="prev" rel="prev" title="Strings"><i class="fas fa-angle-left fa-fw"></i>Strings</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Rashik Shrestha</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

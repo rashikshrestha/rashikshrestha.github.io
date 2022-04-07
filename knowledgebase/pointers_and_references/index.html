@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Pointers and References - Rashik Shrestha</title><meta name="Description" content=""><meta property="og:title" content="Pointers and References" />
+<meta property="og:description" content="Memory  In the context of this tutorial, memory is simply a place/register/space in our RAM where variables are stored.  Pointers Introduction  A pointer is just a Number (integer) that holds memory address of another variable. Size of this number/integer is not fixed. It depends upon OS, CPU architecture etc. For example, 4 bytes for 32 bit system and 8 bytes for 64 bit system. Adding &amp; in front of a vaiable name gives the address in memory where that variable is stored in." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rashik.info.np/knowledgebase/pointers_and_references/" />
+<meta property="article:published_time" content="2022-03-05T12:06:14+05:45" />
+<meta property="article:modified_time" content="2022-03-05T12:06:14+05:45" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pointers and References"/>
+<meta name="twitter:description" content="Memory  In the context of this tutorial, memory is simply a place/register/space in our RAM where variables are stored.  Pointers Introduction  A pointer is just a Number (integer) that holds memory address of another variable. Size of this number/integer is not fixed. It depends upon OS, CPU architecture etc. For example, 4 bytes for 32 bit system and 8 bytes for 64 bit system. Adding &amp; in front of a vaiable name gives the address in memory where that variable is stored in."/>
+<meta name="application-name" content="Rashik Shrestha">
+<meta name="apple-mobile-web-app-title" content="Rashik Shrestha"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rashik.info.np/knowledgebase/pointers_and_references/" /><link rel="prev" href="http://rashik.info.np/knowledgebase/scope_in_cpp/" /><link rel="next" href="http://rashik.info.np/knowledgebase/const_keyword/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pointers and References",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rashik.info.np\/knowledgebase\/pointers_and_references\/"
+        },"genre": "posts","keywords": "C\x2b\x2b","wordcount":  1013 ,
+        "url": "http:\/\/rashik.info.np\/knowledgebase\/pointers_and_references\/","datePublished": "2022-03-05T12:06:14+05:45","dateModified": "2022-03-05T12:06:14+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Rashik Shrestha"},"author": {
+                "@type": "Person",
+                "name": "Rashik Shrestha"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/aboutme/aboutme"> About Me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/knowledgebase/"> Knowledge Base </a><a class="menu-item" href="/projects/"> Projects </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/aboutme/aboutme" title="">About Me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/knowledgebase/" title="">Knowledge Base</a><a class="menu-item" href="/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Pointers and References</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rashik Shrestha</a></span>&nbsp;<span class="post-category">included in <a href="/categories/c++/"><i class="far fa-folder fa-fw"></i>C++</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-03-05">2022-03-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1013 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#memory">Memory</a></li>
+    <li><a href="#pointers">Pointers</a>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#type-of-pointer">Type of Pointer</a></li>
+        <li><a href="#pointer-arthematic">Pointer Arthematic</a></li>
+        <li><a href="#accessing-uninitialized-pointers">Accessing uninitialized pointers</a></li>
+        <li><a href="#null-pointer">NULL Pointer</a></li>
+        <li><a href="#more-on-pointers">More on Pointers</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a>
+      <ul>
+        <li><a href="#introduction-1">Introduction</a></li>
+        <li><a href="#pass-by-value-vs-pointer-vs-reference">Pass by Value vs Pointer vs Reference</a></li>
+        <li><a href="#criteria-of-using-references-todo">Criteria of using References (TODO)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="memory">Memory</h2>
+<ul>
+<li>In the context of this tutorial, memory is simply a place/register/space in our RAM where variables are stored.</li>
+</ul>
+<h2 id="pointers">Pointers</h2>
+<h3 id="introduction">Introduction</h3>
+<ul>
+<li>A pointer is just a Number (integer) that holds memory address of another variable.</li>
+<li>Size of this number/integer is not fixed. It depends upon OS, CPU architecture etc.</li>
+<li>For example, 4 bytes for 32 bit system and 8 bytes for 64 bit system.</li>
+<li>Adding <code>&amp;</code> in front of a vaiable name gives the address in memory where that variable is stored in.</li>
+<li>In other words, adding <code>&amp;</code> before variable name gives pointer to that variable.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="cp">#define PRINT(msg) std::cout &lt;&lt; msg &lt;&lt; std::endl
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">PRINT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">PRINT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">z</span><span class="p">;</span>
+    <span class="n">PRINT</span><span class="p">(</span><span class="o">&amp;</span><span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Output</p>
+<pre><code>0x7fffa8b8fc5b
+0x7fffa8b8fc5c
+0x7fffa8b8fc60
+</code></pre><ul>
+<li>Here, <code>0x7fffa8b8fc5b</code> is the memory address where variable <code>x</code> is kept at and similar for variables <code>y</code> and <code>z</code>.</li>
+<li>We can also define a <strong>pointer variable</strong> to store this address of <code>x</code>:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div><p>Output</p>
+<pre><code>0x7fffe596ff7c
+</code></pre><ul>
+<li>Here, pointer variable <code>ptr</code> is defined as <code>void* ptr</code>.</li>
+<li>But what does <code>void*</code> term actually mean? Well, the following section explain about this is detail.</li>
+</ul>
+<h3 id="type-of-pointer">Type of Pointer</h3>
+<ul>
+<li>Can a pointer have type?</li>
+<li>In above example pointers to <code>bool x</code>, <code>int y</code> and <code>double z</code> all looks similar.</li>
+<li>Indeed, that are same. Value of each of them is 8 byte integer (for 64 bit system).</li>
+<li>No matter which variable is it pointing, its value is always 8 byte integer.</li>
+<li>One difference we can notice is, the increment in memory address from <code>x to z</code> is not same.</li>
+<li>There is increment of 1 between <code>x</code> and <code>y</code>. And increment of 4 between <code>y</code> and <code>z</code>.</li>
+<li>This is because <code>x</code> is a <code>bool</code> variable which takes 1 bytes of space and <code>y</code> is <code>int</code> variable which takes 4 bytes of space in memory.</li>
+<li>Basically, <code>&amp;x</code> is the memory address of first byte where <code>x</code> is stored. And, <code>&amp;y</code> is the memory address of first byte where <code>y</code> is stored. Similar for <code>&amp;z</code>.</li>
+</ul>
+<p>Note: Variables may not be stored consequiteley in the memory</p>
+<ul>
+<li>So, the pointer variable which is pointing to the first byte of integer can be referred to as <strong>integer pointer</strong>. Similar for other variables.</li>
+<li><code>void*</code> used in above example is pointer without any specific type.</li>
+<li>Lets clear this once again. From the perspective of a CPU, all pointers are treated the same. We just assign the different types to pointers such as <code>bool*</code>, <code>int*</code>, <code>float*</code> etc for the ease of use. One advantage is to know which datatype is the given pointer variable pointing to.</li>
+<li>Another advantage is in Pointer Arthematic. Which is explained in following sections.</li>
+<li>Type of pointer also comes in handy when we assign specific value to the variable pointed by that pointer.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+<span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div><p>Output</p>
+<pre><code>7
+10
+</code></pre><ul>
+<li>Here, we were able to assign value 10 to <code>int* ptr</code> because we told compiler that <code>ptr</code> holds the variable of type <code>int</code>.:w</li>
+</ul>
+<h3 id="pointer-arthematic">Pointer Arthematic</h3>
+<ul>
+<li>We have <code>int* ptr</code>. What might happen if we try to increment it (i.e. <code>ptr++</code>)?</li>
+<li>Lets Try:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="n">ptr</span><span class="o">++</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="n">ptr</span><span class="o">++</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div><p>Output</p>
+<pre><code>0x7ffd7a7be02c
+0x7ffd7a7be030
+0x7ffd7a7be034
+</code></pre><ul>
+<li>How about using <code>bool*</code></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">bool</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">bool</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="n">ptr</span><span class="o">++</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="n">ptr</span><span class="o">++</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div><p>Output</p>
+<pre><code>0x7fff91543a1f
+0x7fff91543a20
+0x7fff91543a21
+</code></pre><ul>
+<li>Noticed the difference between incrementing <code>int*</code> and <code>bool*</code>?</li>
+<li>Pointer values are incremented by 4 for <code>int*</code> and by 1 for <code>bool*</code></li>
+<li>That is obviously because size of <code>int</code> is 4 bytes and <code>bool</code> is 1 byte.</li>
+<li>This type of increment was possible because we specified a TYPE to the pointer.</li>
+</ul>
+<h3 id="accessing-uninitialized-pointers">Accessing uninitialized pointers</h3>
+<ul>
+<li>Rule is: Never try to read or write the address pointed by uninitialized pointers</li>
+<li>Uninitialized pointer variabes will hold random value which points to random section of memory.</li>
+<li>And if that section is not readable or writable, the program crashes !</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span><span class="p">;</span> <span class="c1">// Here ptr is uninitialized
+</span><span class="c1"></span><span class="n">PRINT</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span> <span class="c1">// Lets see what random value it holds
+</span><span class="c1"></span><span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="c1">// Trying to write to that random adderss crashes the program !
+</span></code></pre></div><p><strong>Output</strong></p>
+<pre><code>0x55f2be742140
+Segmentation fault (core dumped)
+</code></pre><h3 id="null-pointer">NULL Pointer</h3>
+<ul>
+<li>Can be null (TODO)</li>
+</ul>
+<h3 id="more-on-pointers">More on Pointers</h3>
+<ul>
+<li>Pointer can hold memory address of variable stored in Stack or in Heap. See more about this here.</li>
+</ul>
+<h2 id="references">References</h2>
+<h3 id="introduction-1">Introduction</h3>
+<ul>
+<li>References are like a disguised version of Pointers.</li>
+<li>References are like the nickname/alias given to a variable’s Pointer.</li>
+<li>References themselves are not new variables. They don&rsquo;t occupy space in the memory. They are just there in our source code to make our work easier.</li>
+<li>They just <strong>“refer”</strong> to the existing variable.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">reference_to_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">PRINT</span><span class="p">(</span><span class="n">reference_to_x</span><span class="p">);</span>
+</code></pre></div><p>Output</p>
+<pre><code>7
+</code></pre><ul>
+<li>Here, we have created a reference to the variable <code>x</code>.</li>
+</ul>
+<p>Note: <code>&amp;</code> used here has different meaning than that of <code>&amp;</code> used as <strong>address of</strong> operator !</p>
+<ul>
+<li>And now we can use this term <code>reference_to_x</code> as if it was <code>x</code>.</li>
+<li>But what&rsquo;s fun in that? Why do we even need <code>reference_to_x</code> when we can directly use <code>x</code>?</li>
+</ul>
+<h3 id="pass-by-value-vs-pointer-vs-reference">Pass by Value vs Pointer vs Reference</h3>
+<h4 id="pass-by-value">Pass by Value</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">add_one</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">val</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">add_one</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">PRINT</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Output</p>
+<pre><code>7
+</code></pre><ul>
+<li>Here, <code>add_one</code> function copies the int value passed into it and increments the duplicate value.</li>
+<li>So, <code>x</code> remains unchanged.</li>
+</ul>
+<h4 id="pass-by-pointer">Pass by Pointer</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">add_one</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">val</span><span class="p">)</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">add_one</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">PRINT</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Output</p>
+<pre><code>8
+</code></pre><ul>
+<li>Here, the memory address of <code>x</code> is passed.</li>
+<li><code>add_value</code> duplcates the memory address passed into it, but it still points to the same value <code>x</code></li>
+<li>Then inreasing <code>*val</code> increases the value in <code>x</code> too.</li>
+</ul>
+<h4 id="pass-by-reference">Pass by Reference</h4>
+<div class="highlight"><pre class="chroma"><code class="language-C++" data-lang="C++"><span class="kt">void</span> <span class="nf">add_one</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">val</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">val</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">add_one</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">PRINT</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>Output</p>
+<pre><code>8
+</code></pre><ul>
+<li>This code looks exactly similar to that in Pass by Value, except one little <code>&amp;</code> after <code>int</code> in <code>add_one</code> function.</li>
+<li>This behaves exactly as Pass by Pointer but look much pleasing to read and write.</li>
+<li>It&rsquo;s just <strong>syntatic sugar</strong> !!</li>
+</ul>
+<h3 id="criteria-of-using-references-todo">Criteria of using References (TODO)</h3>
+<ul>
+<li>Must be initialized</li>
+<li>Cannot be reassigned!</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-03-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/knowledgebase/scope_in_cpp/" class="prev" rel="prev" title="Scope in C&#43;&#43;"><i class="fas fa-angle-left fa-fw"></i>Scope in C&#43;&#43;</a>
+            <a href="/knowledgebase/const_keyword/" class="next" rel="next" title="const keyword">const keyword<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Rashik Shrestha</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - Rashik Shrestha</title>
+        <link>http://rashik.info.np/categories/</link>
+        <description>Categories - Category - Rashik Shrestha</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>rashikshrestha01@gmail.com (Rashik Shrestha)</managingEditor>
+            <webMaster>rashikshrestha01@gmail.com (Rashik Shrestha)</webMaster><lastBuildDate>Tue, 05 Apr 2022 17:53:22 &#43;0545</lastBuildDate><atom:link href="http://rashik.info.np/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>C&#43;&#43;</title>
+    <link>http://rashik.info.np/categories/c&#43;&#43;/</link>
+    <pubDate>Tue, 05 Apr 2022 17:53:22 &#43;0545</pubDate>
+    <author>Author</author>
+    <guid>http://rashik.info.np/categories/c&#43;&#43;/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Photogrammetry</title>
+    <link>http://rashik.info.np/categories/photogrammetry/</link>
+    <pubDate>Fri, 25 Feb 2022 22:16:14 &#43;0545</pubDate>
+    <author>Author</author>
+    <guid>http://rashik.info.np/categories/photogrammetry/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>ML</title>
+    <link>http://rashik.info.np/categories/ml/</link>
+    <pubDate>Tue, 22 Feb 2022 13:29:41 &#43;0545</pubDate>
+    <author>Author</author>
+    <guid>http://rashik.info.np/categories/ml/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

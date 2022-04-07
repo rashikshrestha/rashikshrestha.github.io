@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>ML model visualization using Netron - Rashik Shrestha</title><meta name="Description" content=""><meta property="og:title" content="ML model visualization using Netron" />
+<meta property="og:description" content="1. Intro  Netron is really great tool to visualize the ML models. ONNX (Open Neural Network Exchange Format) is a format designed to represent any type of Machine Learning and Deep Learning models. Pytorch and Tensorflow can export the model in onnx format. This onnx file can then be read with Netron to visualize the model graphically.  2. Installation As simple as:
+pip install netron 3. Barebone code import torch import torch." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rashik.info.np/knowledgebase/ml_model_visualization_using_netron/" />
+<meta property="article:published_time" content="2022-02-22T13:29:41+05:45" />
+<meta property="article:modified_time" content="2022-02-22T13:29:41+05:45" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ML model visualization using Netron"/>
+<meta name="twitter:description" content="1. Intro  Netron is really great tool to visualize the ML models. ONNX (Open Neural Network Exchange Format) is a format designed to represent any type of Machine Learning and Deep Learning models. Pytorch and Tensorflow can export the model in onnx format. This onnx file can then be read with Netron to visualize the model graphically.  2. Installation As simple as:
+pip install netron 3. Barebone code import torch import torch."/>
+<meta name="application-name" content="Rashik Shrestha">
+<meta name="apple-mobile-web-app-title" content="Rashik Shrestha"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rashik.info.np/knowledgebase/ml_model_visualization_using_netron/" /><link rel="next" href="http://rashik.info.np/knowledgebase/compile_cpp_codes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "ML model visualization using Netron",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rashik.info.np\/knowledgebase\/ml_model_visualization_using_netron\/"
+        },"genre": "posts","keywords": "visualization, pytorch, netron, onnx","wordcount":  431 ,
+        "url": "http:\/\/rashik.info.np\/knowledgebase\/ml_model_visualization_using_netron\/","datePublished": "2022-02-22T13:29:41+05:45","dateModified": "2022-02-22T13:29:41+05:45","publisher": {
+            "@type": "Organization",
+            "name": "Rashik Shrestha"},"author": {
+                "@type": "Person",
+                "name": "Rashik Shrestha"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/aboutme/aboutme"> About Me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/knowledgebase/"> Knowledge Base </a><a class="menu-item" href="/projects/"> Projects </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Rashik Shrestha">Rashik Shrestha</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/aboutme/aboutme" title="">About Me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/knowledgebase/" title="">Knowledge Base</a><a class="menu-item" href="/projects/" title="">Projects</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">ML model visualization using Netron</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Rashik Shrestha</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ml/"><i class="far fa-folder fa-fw"></i>ML</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-22">2022-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;431 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-intro">1. Intro</a></li>
+    <li><a href="#2-installation">2. Installation</a></li>
+    <li><a href="#3-barebone-code">3. Barebone code</a></li>
+    <li><a href="#4-show-tensor-shapes-at-each-step">4. Show tensor shapes at each step</a></li>
+    <li><a href="#5-multiple-inputs-outputs">5. Multiple Inputs Outputs</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1-intro">1. Intro</h2>
+<ul>
+<li><strong>Netron</strong> is really great tool to visualize the ML models.</li>
+<li>ONNX (Open Neural Network Exchange Format) is a format designed to represent any type of Machine Learning and Deep Learning models.</li>
+<li>Pytorch and Tensorflow can export the model in onnx format.</li>
+<li>This onnx file can then be read with Netron to visualize the model graphically.</li>
+</ul>
+<h2 id="2-installation">2. Installation</h2>
+<p>As simple as:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pip install netron
+</code></pre></div><h2 id="3-barebone-code">3. Barebone code</h2>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">netron</span>
+
+<span class="c1"># Define the Model</span>
+<span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NeuralNetwork</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dense1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>    
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span> <span class="c1"># Create a Model</span>
+<span class="n">dummy_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">])</span> <span class="c1"># Dummy Input to the model </span>
+									<span class="c1"># (batch_size=1, input_shape=(28x28))</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="s2">&#34;simple_model.onnx&#34;</span> <span class="c1"># Path of the onnx file</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="n">model_path</span><span class="p">)</span> <span class="c1"># Export the model to ONNX file</span>
+<span class="n">netron</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span> <span class="c1"># Visualize using Netron</span>
+</code></pre></div><details>
+    <summary><em><strong>Output</strong></em></summary>
+    <img src="/ML_model_visualization_using_Netron/visualization.png" alt="Simple Model" title="Model">
+</details>
+<ul>
+<li>Above code will open the visualization in browser @ <code>http://localhost:8080/</code></li>
+<li>It needs a dummy input to pass through the model and calculate necessary data.</li>
+<li>Dummy input can be anything. It just needs to have right shape that model takes.</li>
+<li>To name the inputs and outputs, add following parameters to the <code>torch.onnx.export</code> function.</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dummy_input</span><span class="p">,</span> <span class="n">model_path</span><span class="p">,</span>
+                  <span class="n">input_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">],</span>   
+                  <span class="n">output_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">])</span>
+</code></pre></div><details>
+    <summary><em><strong>Output</strong></em></summary>
+    <img src="/ML_model_visualization_using_Netron/with_names.png" alt="With Names"/>
+</details>
+<h2 id="4-show-tensor-shapes-at-each-step">4. Show tensor shapes at each step</h2>
+<ul>
+<li>Install <code>onnx</code> package</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pip install onnx
+</code></pre></div><ul>
+<li>After exporting the onnx file, read back using <code>onnx.load</code> and then infer the tensor shapes</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Input tensor shapes at each step</span>
+<span class="n">onnx</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">shape_inference</span><span class="o">.</span><span class="n">infer_shapes</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">)),</span> <span class="n">model_path</span><span class="p">)</span>
+
+<span class="n">netron</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span> <span class="c1"># Visualize using Netron</span>
+</code></pre></div><details>
+    <summary><em><strong>Output</strong></em></summary>
+    <img src="/ML_model_visualization_using_Netron/with_shapes.png" alt="Multiple Inputs" width="200"/>
+</details>
+<ul>
+<li>This is a lot better visualization of model</li>
+</ul>
+<h2 id="5-multiple-inputs-outputs">5. Multiple Inputs Outputs</h2>
+<ul>
+<li>Here is example using Two inputs and Two outputs</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">netron</span>
+<span class="kn">import</span> <span class="nn">onnx</span>
+
+<span class="c1"># Define the Model</span>
+<span class="k">class</span> <span class="nc">NeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NeuralNetwork</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Flatten</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dense1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">dense2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">14</span><span class="o">*</span><span class="mi">14</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">head1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">head2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>  
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="n">x_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">y_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="n">x_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense1</span><span class="p">(</span><span class="n">x_out</span><span class="p">)</span>
+        <span class="n">y_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dense2</span><span class="p">(</span><span class="n">y_out</span><span class="p">)</span>
+
+        <span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">x_out</span><span class="p">,</span><span class="n">y_out</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">pred1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head1</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+        <span class="n">pred2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">head2</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">pred1</span><span class="p">,</span> <span class="n">pred2</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">NeuralNetwork</span><span class="p">()</span> <span class="c1"># Create a Model</span>
+<span class="n">dummy_input1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">])</span> <span class="c1"># Dummy Input (batch_size=1, input_shape=(28x28))</span>
+<span class="n">dummy_input2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">14</span><span class="p">])</span> <span class="c1"># Dummy Input (batch_size=1, input_shape=(14x14))</span>
+
+<span class="n">model_path</span> <span class="o">=</span> <span class="s2">&#34;simple_model.onnx&#34;</span> <span class="c1"># Path of the onnx file</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">onnx</span><span class="o">.</span><span class="n">export</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="p">(</span><span class="n">dummy_input1</span><span class="p">,</span> <span class="n">dummy_input2</span><span class="p">),</span> <span class="n">model_path</span><span class="p">,</span>
+                  <span class="n">input_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;image1&#39;</span><span class="p">,</span> <span class="s1">&#39;image2&#39;</span><span class="p">],</span>   
+                  <span class="n">output_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;prediction1&#39;</span><span class="p">,</span> <span class="s1">&#39;prediction2&#39;</span><span class="p">])</span>  <span class="c1"># Export the model to ONNX file</span>
+
+<span class="c1"># Input tensor shapes at each step</span>
+<span class="n">onnx</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">shape_inference</span><span class="o">.</span><span class="n">infer_shapes</span><span class="p">(</span><span class="n">onnx</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model_path</span><span class="p">)),</span> <span class="n">model_path</span><span class="p">)</span>
+
+<span class="n">netron</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span> <span class="c1"># Visualize using Netron</span>
+</code></pre></div><details>
+    <summary><em><strong>Output</strong></em></summary>
+    <img src="/ML_model_visualization_using_Netron/multiple.jpg" alt="Multiple Inputs" width="300"/>
+</details>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-02-22</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/visualization/">visualization</a>,&nbsp;<a href="/tags/pytorch/">pytorch</a>,&nbsp;<a href="/tags/netron/">netron</a>,&nbsp;<a href="/tags/onnx/">onnx</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/knowledgebase/compile_cpp_codes/" class="next" rel="next" title="How to compile C&#43;&#43; codes">How to compile C&#43;&#43; codes<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Rashik Shrestha</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

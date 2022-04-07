@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>3d reconstruction - Tag - Rashik Shrestha</title>
+        <link>http://rashik.info.np/tags/3d-reconstruction/</link>
+        <description>3d reconstruction - Tag - Rashik Shrestha</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>rashikshrestha01@gmail.com (Rashik Shrestha)</managingEditor>
+            <webMaster>rashikshrestha01@gmail.com (Rashik Shrestha)</webMaster><lastBuildDate>Fri, 25 Feb 2022 22:16:14 &#43;0545</lastBuildDate><atom:link href="http://rashik.info.np/tags/3d-reconstruction/" rel="self" type="application/rss+xml" /><item>
+    <title>Epipolar Geometry</title>
+    <link>http://rashik.info.np/knowledgebase/epipolar_geometry/</link>
+    <pubDate>Fri, 25 Feb 2022 22:16:14 &#43;0545</pubDate>
+    <author>Author</author>
+    <guid>http://rashik.info.np/knowledgebase/epipolar_geometry/</guid>
+    <description><![CDATA[Fundamental matrix song Has seven degrees of freedom&hellip;. This is a fundamental matrix song!!]]></description>
+</item></channel>
+</rss>
