@@ -18,14 +18,6 @@ General Syntax   General syntax to run g++ compiler is:
 g++ &lt;flags_with_params&gt; &lt;source_files&gt;
   The above command takes a bunch of source files along with some flags and generates an executable file or a library file.]]></description>
 </item><item>
-    <title>Strings</title>
-    <link>http://rashik.info.np/knowledgebase/string/</link>
-    <pubDate>Tue, 08 Mar 2022 11:15:27 &#43;0545</pubDate>
-    <author>Author</author>
-    <guid>http://rashik.info.np/knowledgebase/string/</guid>
-    <description><![CDATA[See https://stackoverflow.com/questions/19656025/why-is-char-on-the-stack-but-char-on-the-heap
-Introduction  Just a group/arrary of characters. character here means char datatype of 1 byte. Terminated by NULL character. i.e ASCII value 0. Written as '\0 in character form. Or 0 in int form.  char[]  Stores specified numbers of characters on Stack  char*  Stores specified numbers of characters on Heap and stores pointer to that memory in stack. But unlike other heap alocated memory, we don&rsquo;t need to free the Heap memory using delete.]]></description>
-</item><item>
     <title>const keyword</title>
     <link>http://rashik.info.np/knowledgebase/const_keyword/</link>
     <pubDate>Mon, 07 Mar 2022 07:37:29 &#43;0545</pubDate>
@@ -39,15 +31,6 @@ Introduction  Just a group/arrary of characters. character here means char datat
     <author>Author</author>
     <guid>http://rashik.info.np/knowledgebase/pointers_and_references/</guid>
     <description><![CDATA[Memory  In the context of this tutorial, memory is simply a place/register/space in our RAM where variables are stored.  Pointers Introduction  A pointer is just a Number (integer) that holds memory address of another variable. Size of this number/integer is not fixed. It depends upon OS, CPU architecture etc. For example, 4 bytes for 32 bit system and 8 bytes for 64 bit system. Adding &amp; in front of a vaiable name gives the address in memory where that variable is stored in.]]></description>
-</item><item>
-    <title>Scope in C&#43;&#43;</title>
-    <link>http://rashik.info.np/knowledgebase/scope_in_cpp/</link>
-    <pubDate>Sat, 05 Mar 2022 09:41:57 &#43;0545</pubDate>
-    <author>Author</author>
-    <guid>http://rashik.info.np/knowledgebase/scope_in_cpp/</guid>
-    <description><![CDATA[#include &lt;iostream&gt; int main() { int x = 8; std::cout &lt;&lt; &amp;x &lt;&lt; std::endl; int y = 4; std::cout &lt;&lt; &amp;y &lt;&lt; std::endl; return 0; } Output
-0x7ffce382f390 0x7ffce382f394 #include &lt;iostream&gt; int main() { { int x = 8; std::cout &lt;&lt; &amp;x &lt;&lt; std::endl; } int y = 4; std::cout &lt;&lt; &amp;y &lt;&lt; std::endl; return 0; } Output
-0x7ffcaaa4a064 0x7ffcaaa4a064 ]]></description>
 </item><item>
     <title>How to compile C&#43;&#43; codes</title>
     <link>http://rashik.info.np/knowledgebase/compile_cpp_codes/</link>
